@@ -1,2 +1,0 @@
-CGU.png|CGU/CGU.png
-line.png|CGU/line.png
