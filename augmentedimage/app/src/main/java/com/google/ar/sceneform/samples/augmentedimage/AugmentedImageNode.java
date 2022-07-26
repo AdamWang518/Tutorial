@@ -30,7 +30,6 @@ import com.google.ar.sceneform.rendering.FixedWidthViewSizer;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 
 import com.google.ar.sceneform.samples.ModelAction.ModelOne;
-import com.google.ar.sceneform.samples.ModelAction.ModelTwo;
 
 
 import java.util.concurrent.CompletableFuture;
@@ -42,14 +41,14 @@ import java.util.concurrent.CompletableFuture;
 @SuppressWarnings({"AndroidApiChecker"})
 public class AugmentedImageNode extends AnchorNode {
     private static CompletableFuture<ViewRenderable> NumberOneRenderable;
-    private static CompletableFuture<ViewRenderable> NumberTwoRenderable;
+
     private Anchor anchor = null;
     private String Name;
     private  Context context;
     public AugmentedImageNode(Context context) {
         this.context=context;
         NumberOneRenderable=ViewRenderable.builder().setSizer(new FixedWidthViewSizer(0.5f)).setView(context,R.layout.number1_layout).build();
-        NumberTwoRenderable=ViewRenderable.builder().setSizer(new FixedWidthViewSizer(0.5f)).setView(context,R.layout.number2_layout).build();
+
     }
 
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -63,12 +62,7 @@ public class AugmentedImageNode extends AnchorNode {
                     ModelOne modelDefault = new ModelOne(context,view);
                 }
         );
-        NumberTwoRenderable.thenAccept(
-                (Renderable) -> {
-                    View view = Renderable.getView();
-                    ModelTwo modelTwo=new ModelTwo(context,view);
-                }
-        );
+
         this.anchor = image.createAnchor(image.getCenterPose());
         // Set the anchor based on the center of the image.
         setAnchor(this.anchor);
@@ -77,10 +71,7 @@ public class AugmentedImageNode extends AnchorNode {
         {
             setVerticalRenderable(NumberOneRenderable,0f,0f, 0f);
         }
-        else if(Name.equals("game.png"))
-        {
-            setVerticalRenderable(NumberTwoRenderable,0f,0f, 0f);
-        }
+
 
     }
 

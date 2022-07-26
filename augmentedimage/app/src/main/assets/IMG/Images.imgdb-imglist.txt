@@ -1,2 +1,0 @@
-earth.jpg|C:\Users\User\Desktop\ARcoreTool\Image/earth.jpg
-game.png|C:\Users\User\Desktop\ARcoreTool\Image/game.png

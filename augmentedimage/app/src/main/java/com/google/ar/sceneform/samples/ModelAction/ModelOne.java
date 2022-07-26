@@ -21,14 +21,12 @@ public class ModelOne {
     View.OnClickListener buttonlistener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            String ImageName = String.valueOf(view.getTag());
-            Log.d("getImage",ImageName);
-            if(ImageName.equals("cat.jpg")){
-                imageView.setImageResource(R.drawable.cat2);
-            }
-            else if(ImageName.equals("cat2.jpg")){
-                imageView.setImageResource(R.drawable.cat);
-            }
+           if(imageView.getVisibility()==View.VISIBLE){
+               imageView.setVisibility(View.INVISIBLE);
+           }
+           else{
+               imageView.setVisibility(View.VISIBLE);
+           }
         }
     };
 }
