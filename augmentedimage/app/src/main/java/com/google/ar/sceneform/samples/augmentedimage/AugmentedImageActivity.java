@@ -80,32 +80,13 @@ import java.util.TimerTask;
  * Images</a>.
  */
 public  class AugmentedImageActivity extends AppCompatActivity {
-  private static final String TAG = "AugmentedImageFragment";
 
-  // This is the name of the image in the sample database.  A copy of the image is in the assets
-  // directory.  Opening this image on your computer is a good quick way to test the augmented image
-  // matching.
-  private static final String DEFAULT_IMAGE_NAME = "earth.png";
-
-  // This is a pre-created database containing the sample image.
-  private static final String SAMPLE_IMAGE_DATABASE = "Images.imgdb";//要有對比色
-
-  // Augmented image configuration and rendering.
-  // Load a single image (true) or a pre-generated image database (false).
-  private static final boolean USE_SINGLE_IMAGE = false;
-
-  // Do a runtime check for the OpenGL level available at runtime to avoid Sceneform crashing the
-  // application.
-  private static final double MIN_OPENGL_VERSION = 3.0;
 
   private ArFragment arFragment;
-  private int SPEECH_REQUEST_CODE = 0;
   private boolean isImageDetected=false;
-  private AlertDialog show;
   // Augmented image and its associated center pose anchor, keyed by the augmented image in
   // the database.
   private final HashMap<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
-  Button btn = null;
   Scene scene = null;
   AugmentedImageNode node = null;
   AugmentedImage image = null;

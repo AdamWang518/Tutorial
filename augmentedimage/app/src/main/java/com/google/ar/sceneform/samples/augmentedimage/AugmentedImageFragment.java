@@ -117,15 +117,7 @@ public class AugmentedImageFragment extends ArFragment implements
 
 
 
-//  @Override
-//  protected Config getSessionConfiguration(Session session) {
-//    Config config = super.getSessionConfiguration(session);
-//    if (!setupAugmentedImageDatabase(config, session)) {
-//      SnackbarHelper.getInstance()
-//              .showError(getActivity(), "Could not setup augmented image database");
-//    }
-//    return config;
-//  }
+
 
   private boolean setupAugmentedImageDatabase(Config config, Session session) {
     AugmentedImageDatabase augmentedImageDatabase;
